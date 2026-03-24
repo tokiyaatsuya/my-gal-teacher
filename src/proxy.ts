@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import { NextRequest, NextResponse } from 'next/server';
 
 const VALID_USER = process.env.BASIC_AUTH_USER!;
