@@ -1,4 +1,5 @@
-// src/app/api/chat/route.ts
+export const runtime = 'edge';
+
 import { NextResponse } from 'next/server';
 import { Redis } from '@upstash/redis';
 import { getGalTeacherResponse } from '@/lib/ai-service';
