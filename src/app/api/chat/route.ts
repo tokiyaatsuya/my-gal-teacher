@@ -26,6 +26,7 @@ function getClientIp(req: Request): string {
 }
 
 export async function POST(req: Request) {
+    const redis = Redis.fromEnv(); // リクエスト時に初期化（ビルド時エラー回避）
     const today = getTodayKey();
     const ip = getClientIp(req);
 
