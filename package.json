@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cloudflare": "opennextjs-cloudflare build && cp .open-next/worker.js .open-next/_worker.js && cp -r .open-next/assets/_next/. .open-next/_next/",
+    "build:cloudflare": "opennextjs-cloudflare build && mkdir -p .open-next/_next && cp .open-next/worker.js .open-next/_worker.js && cp -r .open-next/assets/_next/static .open-next/_next/static",
     "start": "next start",
     "lint": "eslint"
   },
