@@ -96,7 +96,7 @@ export default function GalTeacherPage() {
             className="flex items-center gap-2 text-sm text-slate-500 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full transition-all"
           >
             <span>🌸</span>
-            <span>ギャルモード</span>
+            <span>全開モード</span>
           </button>
         </div>
 
@@ -194,7 +194,7 @@ export default function GalTeacherPage() {
           className="flex items-center gap-2 text-sm font-bold bg-white text-slate-600 hover:bg-slate-100 px-4 py-2 rounded-full shadow-lg border border-slate-200 transition-all"
         >
           <span>💼</span>
-          <span>オフィスモード</span>
+          <span>人見知りモード</span>
         </button>
       </div>
 
