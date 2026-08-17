@@ -1,5 +1,3 @@
-export const runtime = 'edge';
-
 import { NextResponse } from 'next/server';
 import { Redis } from '@upstash/redis';
 import { getGalTeacherResponse } from '@/lib/ai-service';
@@ -37,11 +35,11 @@ export async function POST(req: Request) {
         });
     }
 
-    const redis = Redis.fromEnv();
     const today = getTodayKey();
     const ip = getClientIp(req);
 
     try {
+        const redis = Redis.fromEnv();
         const globalKey = `rate:global:${today}`;
         const globalCount = await redis.incr(globalKey);
         if (globalCount === 1) await redis.expire(globalKey, 86400);
