@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
             edgeLabelBackground: "#ffffff",
             tertiaryColor: "#f9f9f9",
         },
-        securityLevel: "loose",
+        securityLevel: "strict",
     });
 }
 

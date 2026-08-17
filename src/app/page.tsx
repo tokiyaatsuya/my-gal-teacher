@@ -109,6 +109,7 @@ export default function GalTeacherPage() {
               value={word}
               onChange={handleInputChange}
               placeholder="例：Docker、スクラム、不動産登記..."
+              maxLength={200}
               className="flex-1 p-4 rounded-xl border-2 border-slate-200 focus:outline-none focus:border-blue-400 text-base text-slate-700 bg-white placeholder-slate-400 shadow-sm"
             />
             <button
@@ -229,6 +230,7 @@ export default function GalTeacherPage() {
             value={word}
             onChange={handleInputChange}
             placeholder="知りたい言葉を入れてね（例：Docker）"
+            maxLength={200}
             className="flex-1 p-5 rounded-3xl border-4 border-pink-300 shadow-2xl focus:outline-none focus:border-pink-500 text-lg text-gray-700 bg-white placeholder-gray-400"
           />
           <button

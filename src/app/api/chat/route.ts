@@ -12,11 +12,10 @@ function getTodayKey(): string {
 }
 
 function getClientIp(req: Request): string {
-    const forwarded = req.headers.get('cf-connecting-ip')
-        ?? req.headers.get('x-real-ip')
-        ?? req.headers.get('x-forwarded-for')?.split(',')[0]
+    const ip = req.headers.get('cf-connecting-ip')
+        ?? (process.env.NODE_ENV !== 'production' ? req.headers.get('x-forwarded-for')?.split(',')[0] : null)
         ?? 'unknown';
-    return forwarded.trim();
+    return ip.trim();
 }
 
 function checkBasicAuth(req: Request): boolean {
@@ -67,6 +66,12 @@ export async function POST(req: Request) {
         if (!prompt || typeof prompt !== 'string' || prompt.trim() === '') {
             return NextResponse.json(
                 { error: '何を聞きたいか教えてくれないとわかんないよ〜！💦' },
+                { status: 400 }
+            );
+        }
+        if (prompt.length > 200) {
+            return NextResponse.json(
+                { error: '入力が長すぎるよ！200文字以内でお願いね💦' },
                 { status: 400 }
             );
         }
